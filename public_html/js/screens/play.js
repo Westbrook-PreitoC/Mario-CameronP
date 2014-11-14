@@ -6,7 +6,7 @@ game.PlayScreen = me.ScreenObject.extend({
 		// reset the score
 		game.data.score = 0
                 
-                me.levelDirector.loadLevel("Cameronlevel04");
+                me.levelDirector.loadLevel("CameronPlevel04");
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
