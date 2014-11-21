@@ -22,10 +22,7 @@ game.PlayerEntity = me.Entity.extend({
        
        this.body.setVelocity(5, 20);
        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-       
-       this.body.setVelocity(5, 20);
-       me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
-        
+               
     },
     
     update: function(delta){
@@ -41,8 +38,7 @@ game.PlayerEntity = me.Entity.extend({
        
        }else{
            this.body.vel.x = 0;
-       }
-       
+       }            
        
        this.body.update(delta);  
        me.collision.check(this, true, this.collideHandler.bind(this), true);
@@ -51,12 +47,11 @@ game.PlayerEntity = me.Entity.extend({
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
                 this.renderable.setCurrentAnimation("smallWalk");
                 this.renderable.setAnimationFrame();
-        }   
+        }
+        
        }else{
            this.renderable.setCurrentAnimation("idle");
        }
-       
-       
        
        this._super(me.Entity, "update", [delta]);
        return true;
