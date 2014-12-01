@@ -4,11 +4,11 @@ game.PlayScreen = me.ScreenObject.extend({
 	 */
 	onResetEvent: function() {
 		// reset the score
-		game.data.score = 0
+		game.data.score = 0;
                 
                 me.levelDirector.loadLevel("CameronPlevel04");
                 
-                this.resetPlayer();
+                this.resetPlayer(0, 400);
                 
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
@@ -27,8 +27,8 @@ game.PlayScreen = me.ScreenObject.extend({
 		me.game.world.removeChild(this.HUD);
 	},
         
-        resetPlayer: function(){
+        resetPlayer: function(x, y){
             var player = me.pool.pull("mario", 0, 420, {});
-            me.game.world.addChild(player, 3);
+            me.game.world.addChild(player, 5);
         }
 });
