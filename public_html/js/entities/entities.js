@@ -78,3 +78,7 @@ game.LevelTrigger = me.Entity.extend({
     }
     
 });
+
+game.BadGuy.me.Entity.extend({
+    
+});
