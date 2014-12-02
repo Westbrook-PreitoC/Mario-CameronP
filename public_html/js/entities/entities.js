@@ -32,10 +32,15 @@ game.PlayerEntity = me.Entity.extend({
        }else if(me.input.isKeyPressed("left")){
            this.body.vel.x -= this.body.accel.x / me.timer.tick;
        
-       }      
+       }
         else{
            this.body.vel.x = 0;
-       }   
+       }
+       
+       if(me.input.isKeyPressed("up")){
+           
+           this.body.vel.y -= this.body.accel.y * me.timer.tick;  
+       }
 
        
        this.body.update(delta);  
@@ -105,7 +110,7 @@ game.BadGuy = me.Entity.extend({
         var width = settings.width;
         x = this.pos.x;
         this.startX = x;
-        this.endx = x  + width - this.spritewidth;
+        this.endX = x  + width - this.spritewidth;
         this.pos.x = x + width -this.spritewidth;
         this.updateBounds(); 
         
@@ -139,7 +144,7 @@ game.BadGuy = me.Entity.extend({
         }
         
         
-        this.super(me.Entity, "update", [delta]);
+        this._super(me.Entity, "update", [delta]);
         return true;
     },
     
