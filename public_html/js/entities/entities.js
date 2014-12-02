@@ -56,7 +56,16 @@ game.PlayerEntity = me.Entity.extend({
     },   
     
     collideHandler: function(response){
-         
+        var ydif = this.pos.y - response.b.pos.y;
+        console.log(ydif);
+        
+        if(response.b.type === 'badguy'){
+            if(ydif <= -115){
+                response.b.alive.false; 
+            }else{            
+                me.state.change(me.state.MENU);
+            }
+        }
     }
     
     
@@ -79,7 +88,7 @@ game.LevelTrigger = me.Entity.extend({
     
 });
 
-game.BadGuy.me.Entity.extend({
+game.BadGuy = me.Entity.extend({
     init: function(x, y, settings){
         this._super(me.Entity, 'init', [x, y, {
             image: "slime",
@@ -88,7 +97,7 @@ game.BadGuy.me.Entity.extend({
             width: 60,
             height: 28,
             getShape: function(){
-                return (new me.Rect(0, 0, 30, 128)).toPolygon();
+                return (new me.Rect(0, 0, 60, 28)).toPolygon();
             }
         }]);
     
@@ -102,7 +111,7 @@ game.BadGuy.me.Entity.extend({
         
         this.alwaysupdate = true;
         
-        this.walkleft = false;
+        this.walkLeft = false;
         this.alive = true;
         this.type = "badguy";
         
@@ -114,7 +123,28 @@ game.BadGuy.me.Entity.extend({
     
     update: function(delta){
         this.body.update(delta);
-        me.collision.check(this, true, this.collideHandler.bind(this), true)
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
+        
+        if(this.alive){
+            if(this.walkLeft && this.pos.x <= this.startX){
+                this.walkLeft = false;
+            }else if(!this.walkLeft && this.pos.x >= this.endX){
+                this.walkLeft = true;
+            }
+            this.flipX(!this.walkLeft);
+            this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
+            
+        }else{
+            me.game.world.removeChild(this);
+        }
+        
+        
+        this.super(me.Entity, "update", [delta]);
+        return true;
+    },
+    
+    collideHandler: function(){
+        
     }
     
 });
