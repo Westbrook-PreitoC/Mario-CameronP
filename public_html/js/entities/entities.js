@@ -106,6 +106,8 @@ game.BadGuy = me.Entity.extend({
             }
         }]);
     
+    //Set up variables for the badguy movement
+    
         this.spritewidth = 60;
         var width = settings.width;
         x = this.pos.x;
@@ -114,9 +116,12 @@ game.BadGuy = me.Entity.extend({
         this.pos.x = x + width -this.spritewidth;
         this.updateBounds(); 
         
-        this.alwaysupdate = true;
+        this.alwaysUpdate = true;
         
         this.walkLeft = false;
+        
+        //sets variables for bad guy interacting with Mario
+        
         this.alive = true;
         this.type = "badguy";
         
@@ -127,9 +132,13 @@ game.BadGuy = me.Entity.extend({
     },
     
     update: function(delta){
+        
+        // updates character animation and checks collisions
         this.body.update(delta);
         me.collision.check(this, true, this.collideHandler.bind(this), true);
         
+        
+        //
         if(this.alive){
             if(this.walkLeft && this.pos.x <= this.startX){
                 this.walkLeft = false;
