@@ -162,3 +162,22 @@ game.BadGuy = me.Entity.extend({
     }
     
 });
+
+game.Mushroom = me.Entity.extend({      
+    init: function(x, y, settings){
+        this._super(me.Entity, 'init', [x, y, {
+                image: "mushroom",
+                spritewidth: "64",
+                spiteheight: "64",
+                width: 64,
+                height: 64,
+                getShape: function() {
+                    return (new me.Rect(0, 0, 64, 64)).toPolygon();
+                }
+            }]);
+        
+        me.collision.check(this);
+        this.type = "mushroom";
+    }
+        
+});
