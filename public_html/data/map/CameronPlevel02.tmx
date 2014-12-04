@@ -40,9 +40,16 @@
   <object name="levelTrigger" x="1044" y="453" width="73" height="108">
    <properties>
     <property name="level" value="CameronPlevel03"/>
-    <property name="xSpawn" value="400"/>
-    <property name="ySpawn" value="0"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="EnemyEntities">
+  <object name="BadGuy" x="782" y="527" width="70" height="28"/>
+  <object name="BadGuy" x="820" y="531" width="81" height="24"/>
+  <object name="BadGuy" x="172" y="521" width="105" height="35"/>
+  <object name="BadGuy" x="165" y="528" width="91" height="27"/>
+ </objectgroup>
+ <objectgroup name="CollectableEntities">
+  <object name="Mushroom" x="502" y="464" width="31" height="28"/>
  </objectgroup>
 </map>

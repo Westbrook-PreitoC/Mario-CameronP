@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="9" tilewidth="70" tileheight="70" backgroundcolor="#ff55ff">
+ <tileset firstgid="1" name="background-tiles" tilewidth="70" tileheight="70">
+  <image source="../img/background-tiles.png" width="910" height="910"/>
+ </tileset>
+ <tileset firstgid="170" name="meta-tiles" tilewidth="70" tileheight="70">
+  <image source="../img/meta-tiles.png" width="350" height="70"/>
+  <tile id="1">
+   <properties>
+    <property name="type" value="lslope"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="rslope"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="175" name="cloud-tiles" tilewidth="70" tileheight="70">
+  <image source="../img/cloud-tiles.png" width="387" height="71"/>
+ </tileset>
+ <tileset firstgid="180" name="item-spritesheet" tilewidth="70" tileheight="70">
+  <image source="../img/item-spritesheet.png" width="560" height="560"/>
+ </tileset>
+ <layer name="background" width="16" height="9">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJYAAAAAAAAAAAAAAAsAAACZAAAACwAAAAAAAACZAAAAAAAAAAsAAACZAAAACwAAAAAAAAAAAAAAlwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAjAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAhAAAAFAAAAB8AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOgAAAHMAAAAAAAAAAAAAAB4AAAAhAAAAFAAAABQAAAAUAAAAHwAAACAAAAAAAAAAAAAAAAAAAABzAAAAcQAAADkAAAAiAAAAIwAAACMAAAAUAAAAFAAAABQAAAAUAAAAFAAAABQAAAAUAAAAIwAAACMAAAAjAAAAIwAAACMAAAAkAAAA
+  </data>
+ </layer>
+ <layer name="Collision" width="16" height="9" opacity="0">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKsAAACuAAAArQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKsAAACuAAAArgAAAK4AAACtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKsAAACuAAAArgAAAK4AAACuAAAArgAAAK0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACuAAAArgAAAK4AAACuAAAArgAAAK4AAACuAAAArgAAAK4AAACuAAAArgAAAK4AAACuAAAArgAAAK4AAACuAAAA
+  </data>
+ </layer>
+ <objectgroup name="trigger-entities">
+  <properties>
+   <property name="level" value="CameronPlevel05"/>
+   <property name="xSpawn" value="400"/>
+   <property name="ySpawn" value="0"/>
+  </properties>
+  <object name="levelTrigger" x="1041" y="449" width="77" height="112">
+   <properties>
+    <property name="level" value="CameronPlevel05"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="EmenyEntities">
+  <object name="BadGuy" x="719" y="515" width="294" height="45"/>
+  <object name="BadGuy" x="680" y="511" width="210" height="46"/>
+ </objectgroup>
+ <objectgroup name="CollectableEntities">
+  <object name="Mushroom" x="183" y="523" width="31" height="34"/>
+ </objectgroup>
+</map>
