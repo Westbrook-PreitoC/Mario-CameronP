@@ -33,11 +33,15 @@
  </layer>
  <objectgroup name="trigger-entities">
   <properties>
-   <property name="level" value="CameronPlevel06"/>
+   <property name="level" value="CameronPlevel07"/>
    <property name="xSpawn" value="400"/>
    <property name="ySpawn" value="0"/>
   </properties>
-  <object name="levelTrigger" x="1049" y="455" width="67" height="105"/>
+  <object name="levelTrigger" x="1049" y="455" width="67" height="105">
+   <properties>
+    <property name="level" value="CameronPlevel07"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="EnemyEntities">
   <object name="BadGuy" x="708" y="529" width="122" height="28"/>
