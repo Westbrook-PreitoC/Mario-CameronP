@@ -18,7 +18,7 @@ game.PlayerEntity = me.Entity.extend({
         //creates an animation called smallWalk that uses pictures from the image above, mario
         //uses pictures 8-13 for our animation
         //flips through the pictures every 80 milliseconds
-        this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13, 14], 80);
+        this.renderable.addAnimation("smallWalk", [8, 9, 10, 11, 12, 13], 80);
         
         this.renderable.addAnimation("bigWalk", [14, 15, 16, 17, 18, 19], 80);
         this.renderable.addAnimation("shrink", [0, 1, 2, 3], 80);
