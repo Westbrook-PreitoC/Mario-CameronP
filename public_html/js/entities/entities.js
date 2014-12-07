@@ -14,7 +14,12 @@ game.PlayerEntity = me.Entity.extend({
     
         this.renderable.addAnimation("idle", [3]);
         this.renderable.addAnimation("bigIdle", [19]),
-        this.renderable.addAnimation("smallWalk", [8, 9, 10, 11, 12, 13], 80);
+        
+        //creates an animation called smallWalk that uses pictures from the image above, mario
+        //uses pictures 8-13 for our animation
+        //flips through the pictures every 80 milliseconds
+        this.renderable.addAnimation("smallWalk", [9, 10, 11, 12, 13, 14], 80);
+        
         this.renderable.addAnimation("bigWalk", [14, 15, 16, 17, 18, 19], 80);
         this.renderable.addAnimation("shrink", [0, 1, 2, 3], 80);
         this.renderable.addAnimation("grow", [4, 5, 6, 7], 80);
@@ -22,17 +27,23 @@ game.PlayerEntity = me.Entity.extend({
         
         this.renderable.setCurrentAnimation("idle");
         
-       this.big = false;       
-       this.body.setVelocity(5, 20);
-       me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
+        
+       //creates a variable that tells us whether we are big(whether the mushroom powerup is active) 
+       this.big = false; 
        
+       //sets the speed of mario. The first number represents speed on the x axis, 2nd on the y axis
        this.body.setVelocity(5, 20);
+       
+       //makes the camera(viewport) follow mario's position (this.pos) on both axes
        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
                
     },
     
     update: function(delta){
+       // checks if the right button is pressed, and if so executes the next line of code
        if(me.input.isKeyPressed("right")){
+           //sets the x position of mario by adding the velocity set above in setVelocity() times me.timer.tick
+          //me.timer.tick makes the character move at a smooth pace even if updates are irregular    
            this.body.vel.x += this.body.accel.x * me.timer.tick;
            
        }else if(me.input.isKeyPressed("left")){
@@ -50,6 +61,9 @@ game.PlayerEntity = me.Entity.extend({
 
        
        this.body.update(delta);  
+       //collision.check is a function that passes 4 parameters to determine and resolve mario walking into objects
+       //the first parameter passes this object as one of the ones hit, the third parameter passes all the information to
+       //a function named collideHandler
        me.collision.check(this, true, this.collideHandler.bind(this), true);
        
        if(!this.big){
@@ -90,7 +104,7 @@ game.PlayerEntity = me.Entity.extend({
                     this.jumping = true;
                     this.renderable.setCurrentAnimation("shrink", "idle");
                     this.renderable.setAnimationFrame();
-                }else{
+                }else if(response.b.alive){
                     me.state.change(me.state.MENU);
                 }
             }
