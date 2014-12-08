@@ -2,7 +2,7 @@
 game.PlayerEntity = me.Entity.extend({
     init: function(x, y, settings){
         this._super(me.Entity, 'init', [x, y, {
-            image: "mario",
+            image: "mario",                                           
             spritewidth: "128",
             spiteheight: "128",
             width: 128,
@@ -53,6 +53,8 @@ game.PlayerEntity = me.Entity.extend({
         else{
            this.body.vel.x = 0;
        }
+          //sets the y position of mario by adding the velocity set above in setVelocity() times me.timer.tick
+         //me.timer.tick makes the character move at a smooth pace even if updates are irregular  
        
        if(me.input.isKeyPressed("up")){
            
