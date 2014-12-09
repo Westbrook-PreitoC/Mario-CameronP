@@ -33,7 +33,7 @@
  </layer>
  <objectgroup name="trigger-entities">
   <properties>
-   <property name="level" value="CaemronPlevel02"/>
+   <property name="level" value="CameronPlevel02"/>
    <property name="xSpawn" value="400"/>
    <property name="ySpawn" value="0"/>
   </properties>
