@@ -1,8 +1,7 @@
 var game = {
     data: {
         score: 0
-   },
- 
+    },
     "onload": function() {
         // Initialize the video.
         if (!me.video.init("screen", me.video.CANVAS, 1067, 600, true, 1.0)) {
@@ -29,10 +28,10 @@ var game = {
         me.pool.register("mario", game.PlayerEntity, true);
         me.pool.register("BadGuy", game.BadGuy);
         me.pool.register("mushroom", game.Mushroom);
-        
+
         //makes sure we can go to our next level
         me.pool.register("levelTrigger", game.LevelTrigger);
-        
+
         //me.state.set makes sure that the title and play screen are functioned and running
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
