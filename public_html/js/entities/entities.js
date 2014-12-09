@@ -39,11 +39,13 @@ game.PlayerEntity = me.Entity.extend({
     update: function(delta) {
         // checks if the right button is pressed, and if so executes the next line of code
         if (me.input.isKeyPressed("right")) {
+            this.flipX(false);
             //sets the x position of mario by adding the velocity set above in setVelocity() times me.timer.tick
             //me.timer.tick makes the character move at a smooth pace even if updates are irregular    
             this.body.vel.x += this.body.accel.x * me.timer.tick;
 
         } else if (me.input.isKeyPressed("left")) {
+            this.flipX(true);
             this.body.vel.x -= this.body.accel.x / me.timer.tick;
 
         }
