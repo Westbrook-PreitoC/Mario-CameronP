@@ -43,7 +43,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="EmenyEntities">
+ <objectgroup name="EnemyEntities">
   <object name="BadGuy" x="719" y="515" width="294" height="45"/>
   <object name="BadGuy" x="680" y="511" width="210" height="46"/>
  </objectgroup>

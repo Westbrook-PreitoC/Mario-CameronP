@@ -15,4 +15,5 @@ game.resources = [
     {name: "CameronPlevel05", type: "tmx", src: "data/map/CameronPlevel05.tmx"},
     {name: "CameronPlevel06", type: "tmx", src: "data/map/CameronPlevel06.tmx"},
     {name: "CameronPlevel07", type: "tmx", src: "data/map/CameronPlevel07.tmx"},
+    {name: "CameronPlevel08", type: "tmx", src: "data/map/CameronPlevel08.tmx"},
 ];

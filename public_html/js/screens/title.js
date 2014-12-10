@@ -6,7 +6,7 @@ game.TitleScreen = me.ScreenObject.extend({
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
                 this._super(me.Renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height]);
-                this.font = new me.Font("Arial", 46, "red");
+                this.font = new me.Font("Arial", 50, "red");
 
             },
             //tells you to put title and start button
