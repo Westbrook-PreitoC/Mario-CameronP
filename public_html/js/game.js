@@ -3,7 +3,7 @@ var game = {
         score: 0
     },
     "onload": function() {
-        // Initialize the video.
+        // Makes the video work
         if (!me.video.init("screen", me.video.CANVAS, 1067, 600, true, 1.0)) {
             alert("Your browser does not support HTML5 canvas.");
             return;
