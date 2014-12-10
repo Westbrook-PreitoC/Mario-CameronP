@@ -1,4 +1,3 @@
-//ToDo
 game.PlayerEntity = me.Entity.extend({
     init: function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
@@ -199,7 +198,7 @@ game.BadGuy = me.Entity.extend({
             me.game.world.removeChild(this);
         }
 
-
+        //this code updates anything new that we add
         this._super(me.Entity, "update", [delta]);
         return true;
     },

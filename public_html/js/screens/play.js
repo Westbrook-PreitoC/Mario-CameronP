@@ -2,8 +2,10 @@ game.PlayScreen = me.ScreenObject.extend({
     onResetEvent: function() {
         game.data.score = 0;
 
+        //this code tells us what level to start on 
         me.levelDirector.loadLevel("CameronPlevel04");
 
+        //this.resetPlayer lets us know that your mario/player is restarting when dying
         this.resetPlayer(0, 400);
 
         //me.input.bindKey lets us know which keys are functioning and which buttons to press

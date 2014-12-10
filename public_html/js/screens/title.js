@@ -6,7 +6,7 @@ game.TitleScreen = me.ScreenObject.extend({
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
                 this._super(me.Renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height]);
-                this.font = new me.Font("Arial", 46, "white");
+                this.font = new me.Font("Arial", 46, "red");
 
             },
             //tells you to put title and start button
@@ -17,7 +17,7 @@ game.TitleScreen = me.ScreenObject.extend({
 
         })));
 
-
+        //this code makes sure your play screen works
         this.handler = me.event.subscribe(me.event.KEYDOWN, function(action, keyCode, edge) {
             if (action === "start") {
                 me.state.change(me.state.PLAY);

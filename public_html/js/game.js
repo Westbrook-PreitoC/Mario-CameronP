@@ -15,6 +15,7 @@ var game = {
             });
         }
 
+        //this code is where you are supposed to put background music for the mario game 
         me.audio.init("mp3,ogg");
 
         me.loader.onload = this.loaded.bind(this);
